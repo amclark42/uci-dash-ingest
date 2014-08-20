@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3'
+ruby '2.1.2'
 
 gem 'rails', '3.2.19'
 
@@ -15,7 +15,7 @@ group :development, :local do
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
   gem 'webrick', '~> 1.3.1'
-  gem 'debugger', :git => 'https://github.com/cldwalker/debugger.git'
+  gem 'byebug'
   gem 'sextant' #you can go to http://localhost:3000/rails/routes to see routes
 end
 
@@ -23,10 +23,15 @@ group :test do
   gem 'launchy'
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'simplecov', '~> 0.7.1'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'factory_girl_rails'
+  gem 'sqlite3'
+  gem 'database_cleaner'
 end
 
 gem 'whenever', :require => false
+
+
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -36,7 +41,6 @@ group :assets do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -57,9 +61,7 @@ gem "omniauth-google-oauth2", "~> 0.2.1"
 
 # Use unicorn as the app server
 gem 'unicorn'
-
-# To use debugger
-#gem 'debugger'
 gem 'carrierwave'
-gem 'wherex' #to handle regular expressions in queries
+gem 'custom_error_message', '~> 1.1.1'
+
 
